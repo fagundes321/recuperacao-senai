@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { ProdutosService } from '../produtos.service';
+
+@Component({
+  selector: 'app-produtos',
+  templateUrl: './produtos.component.html',
+  styleUrls: ['./produtos.component.less'],
+})
+export class ProdutosComponent {
+  listaProdutos: any[] = [];
+
+  constructor(private produtoService: ProdutosService) {}
+
+  ngOnInit() {
+    this.produtoService.pegarProdutos().subscribe((produtos) => {
+      this.listaProdutos = produtos;
+    });
+  }
+}

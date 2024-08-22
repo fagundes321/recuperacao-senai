@@ -1,0 +1,15 @@
+<main>
+  <section>
+    <h1>lista de produtos</h1>
+    <table>
+      <thead>
+        <th>Nome do produtos</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of listaProdutos">
+          <td>{{ p.nome }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
